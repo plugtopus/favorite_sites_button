@@ -1,0 +1,174 @@
+.cj-shortcutlist {
+    margin: auto;
+    padding: 8px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: normal;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    font-family: Roboto Condensed, Roboto, Arial, sans-serif
+}
+
+.cj-shortcutlist--parentwidth {
+    margin-right: -24px
+}
+
+.cj-shortcutlist--grid {
+    padding: 22px
+}
+
+.cj-shortcutlist__item {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    box-sizing: border-box;
+    vertical-align: top;
+    height: 44px;
+    width: 152px;
+    padding: 4px 8px;
+    cursor: pointer;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.cj-shortcutlist__item--dragging {
+    opacity: 0
+}
+
+.cj-shortcutlist--grid .cj-shortcutlist__item {
+    display: inline-block;
+    height: 108px;
+    width: 92px;
+    padding: 2px
+}
+
+.cj-shortcutlist--condensed .cj-shortcutlist__item {
+    height: 32px
+}
+
+.cj-shortcutlist--nolabels .cj-shortcutlist__item {
+    width: auto
+}
+
+.cj-shortcutlist--grid.cj-shortcutlist--nolabels .cj-shortcutlist__item {
+    width: 92px;
+    height: 92px
+}
+
+.cj-shortcutlist__icon {
+    pointer-events: none;
+    -webkit-transition: -webkit-filter .1s;
+    transition: -webkit-filter .1s;
+    transition: filter .1s;
+    transition: filter .1s, -webkit-filter .1s;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex: none;
+    flex: none;
+    box-sizing: border-box;
+    position: relative
+}
+
+.cj-shortcutlist--grid .cj-shortcutlist__icon {
+    margin: 8px auto
+}
+
+.cj-shortcutlist__icon--box {
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #ddd
+}
+
+.cj-shortcutlist__item--edit:hover .cj-shortcutlist__icon {
+    border: none;
+    background: 50%/100% url(/images/system/edit_solid_24px.svg)
+}
+
+.cj-shortcutlist__item--edit:not(:hover) .cj-shortcutlist__icon {
+    -webkit-transition: none;
+    transition: none
+}
+
+.cj-shortcutlist__icon>img {
+    max-height: 100%;
+    max-width: 100%
+}
+
+.cj-shortcutlist__icon--box>img {
+    max-height: 87.5%;
+    max-width: 87.5%
+}
+
+.cj-shortcutlist__item--edit:hover .cj-shortcutlist__icon>img {
+    display: none
+}
+
+.cj-shortcutlist__item:hover>.cj-shortcutlist__icon {
+    -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .24));
+    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .24))
+}
+
+.cj-shortcutlist__item:active>.cj-shortcutlist__icon {
+    -webkit-filter: drop-shadow(0 6px 6px rgba(0, 0, 0, .24));
+    filter: drop-shadow(0 6px 6px rgba(0, 0, 0, .24))
+}
+
+.cj-shortcutlist--dragging .cj-shortcutlist__item>.cj-shortcutlist__icon {
+    -webkit-filter: none;
+    filter: none
+}
+
+.cj-shortcutlist__badge {
+    position: absolute;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0
+}
+
+.cj-shortcutlist--condensed .cj-shortcutlist__badge {
+    width: 24px;
+    height: 24px;
+    top: -4px;
+    left: -4px
+}
+
+.cj-shortcutlist__label {
+    display: inline-block;
+    line-height: 16px;
+    max-height: 32px;
+    pointer-events: none;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    -webkit-flex: 1;
+    flex: 1;
+    margin-left: 16px
+}
+
+.cj-shortcutlist--condensed .cj-shortcutlist__label {
+    height: 16px;
+    max-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.cj-shortcutlist--grid .cj-shortcutlist__label {
+    width: 100%;
+    margin: 0;
+    text-align: center
+}
+
+.cj-shortcutlist--grid .cj-shortcutlist__item:hover>.cj-shortcutlist__label {
+    max-height: 48px
+}
+
+.cj-shortcutlist:not(.cj-shortcutlist--showhidden) .cj-shortcutlist__item[hidden],
+.cj-shortcutlist[hidden] {
+    display: none
+}

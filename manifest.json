@@ -1,0 +1,45 @@
+{
+  "author": "Plugtopus Agency",
+  "update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 2,
+  "name": "__MSG_name__",
+  "homepage_url": "https://plugtopus.agency",
+  "default_locale": "ru",
+  "description": "__MSG_desc__",
+  "minimum_chrome_version": "21",
+  "icons": {
+    "16": "icon/icon-16.png",
+    "19": "icon/icon-19.png",
+    "32": "icon/icon-32.png",
+    "38": "icon/icon-38.png",
+    "48": "icon/icon-48.png",
+    "128": "icon/icon-128.png"
+  },
+  "background": {
+    "page": "html/background.html",
+    "persistent": true
+  },
+  "options_page": "html/options.html",
+  "options_ui": {
+    "page": "html/options.html",
+    "chrome_style": false,
+    "open_in_tab": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon/icon-16.png",
+      "19": "icon/icon-19.png",
+      "32": "icon/icon-32.png",
+      "38": "icon/icon-38.png",
+      "48": "icon/icon-48.png",
+      "128": "icon/icon-128.png"
+    },
+    "default_title": "__MSG_title__",
+    "default_popup": "html/app.html"
+
+  },
+  "permissions": ["storage", "tabs", "http://*/*", "https://*/*", "webRequest", "webRequestBlocking"],
+  "content_scripts": [],
+  "version": "23.4.18.1"
+}

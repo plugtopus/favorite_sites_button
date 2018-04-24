@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Опции</title>
+    <link rel="stylesheet" href="../fonts/roboto.css">
+    <link rel="stylesheet" href="../fonts/roboto-condensed.css">
+    <link rel="stylesheet" href="../css/shortcutlist.css">
+    <link rel="stylesheet" href="../css/options.css">
+</head>
+
+<body>
+    <div class="alg-pref-mainwrapper">
+        <main class="alg-pref-main">
+            <header>
+                <h3 class="alg-pref-mainheader">Выберите сайт</h3>
+            </header>
+            <div class="alg-pref-tip">Вы можите перемещать,удалять,редактировать ваши сайты</div>
+            <div class="alg-selectservices">
+                <div class="alg-selectservices__header">Готовые
+                    <input type="text" id="selectservices__filter" class="alg-pref-textfield services-search-box" placeholder="Поиск">
+                    <div class="cj-md-button cj-md-button--selectbox alg-pref-servicesorder">
+                        <span id="selectservices__ordercurrent">Пoпуляpныe</span>
+                        <select id="selectservices__orderselect" class="cj-md-button__select">
+                            <option selected value="popularity">Популярные</option>
+                            <option value="alphabetically">Имя</option>
+                            <option value="newest">Новостные</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="alg-selectservices__shortcuts">
+                    <ul id="selectservices__available" class="cj-shortcutlist cj-shortcutlist--parentwidth"></ul>
+                </div>
+            </div>
+            <div class="alg-selectservices">
+                <div class="alg-selectservices__header">Мои сайты
+                    <button id="selectservices__sort" class="cj-md-button">От A-Я</button>
+                </div>
+                <div class="alg-selectservices__shortcuts">
+                    <ul id="selectservices__selected" class="cj-shortcutlist cj-shortcutlist--parentwidth cj-shortcutlist--showhidden"></ul>
+                </div>
+            </div>
+            <div class="alg-pref-buttonrow">
+                <button id="selectservices__removeall" class="cj-md-button">Удалить все сервисы</button>
+                <button id="selectservices__addcustom" class="cj-md-button cj-md-button--important">Добавить новые сайты</button>
+                <button id="selectservices__suggest" class="cj-md-button"></button>
+            </div>
+            <header>
+                <h3 class="alg-pref-mainheader">Общие настройки</h3>
+            </header>
+            <div class="alg-pref-item">
+                <div class="alg-pref-slide">
+                    <input type="checkbox" class="alg-pref-slide__input" id="open-in-new-tab">
+                    <label class="alg-pref-slide__label" for="open-in-new-tab"></label>
+                </div>
+                <label for="open-in-new-tab">Открывать сайты в новой вкладке</label>
+            </div>
+            <div class="alg-pref-item alg-pref-item--secondary" id="open-in-new-tab-children" hidden>
+                <div class="alg-pref-slide">
+                    <input type="checkbox" class="alg-pref-slide__input" id="open-in-new-tab-chrome">
+                    <label class="alg-pref-slide__label" for="open-in-new-tab-chrome"></label>
+                </div>
+                <label for="open-in-new-tab-chrome">Открывать сайт в новом браузере и новой вклакде</label>
+            </div>
+            <div class="alg-pref-item" id="no-focus-tab-container" hidden>
+                <div class="alg-pref-slide">
+                    <input type="checkbox" class="alg-pref-slide__input" id="no-focus-tab">
+                    <label class="alg-pref-slide__label" for="no-focus-tab"></label>
+                </div>
+                <label for="no-focus-tab">Открывать вкладку в фоне</label>
+            </div>
+            <div class="alg-pref-item" hidden id="support-marketplace-apps">
+                <div class="alg-pref-slide">
+                    <input type="checkbox" class="alg-pref-slide__input" id="display-marketplace-apps-button">
+                   <!-- <label class="alg-pref-slide__label" for="display-marketplace-apps-button"></label>
+                </div>
+                <label for="display-marketplace-apps-button">Display Marketplace Apps</label>!-->
+            </div>
+            <div hidden id="support-display-launchbox" class="alg-pref-item">
+                <div class="alg-pref-slide">
+                    <input type="checkbox" class="alg-pref-slide__input" id="display-launchbox">
+                    <label class="alg-pref-slide__label" for="display-launchbox"></label>
+                </div>
+                <label for="display-launchbox">Строка поиска в расширении</label>
+            </div>
+            <div hidden id="support-display-settings" class="alg-pref-item">
+                <div class="alg-pref-slide">
+                    <input type="checkbox" class="alg-pref-slide__input" id="display-settings">
+                    <label class="alg-pref-slide__label" for="display-settings"></label>
+                </div>
+                <label for="display-settings">Отображение кнопки настройки</label>
+            </div>
+            <header id="support-appearance-header">
+                <h3 class="alg-pref-mainheader">Отображение</h3>
+            </header>
+            <div hidden id="support-advanced-display-settings">
+                <label for="display-mode" class="display-mode-label">Отображение значков сайтов...</label>
+                <div class="cj-md-button cj-md-button--selectbox">
+                    <span id="current-display-mode">Авто</span>
+                    <select id="display-mode" class="cj-md-button__select">
+                        <option value="grid" selected>Авто</option>
+                        <option value="horizontal">Горизонтально</option>
+                        <option value="vertical">Вертикально</option>
+                        <option value="custom">Количество</option>
+                    </select>
+                </div>
+                <div class="alg-pref-columncount" id="column-count" hidden>
+                    <label for="column-count-input">Выберите количество иконок в окне:</label>
+                    <input type="number" min="1" max="25" step="1" class="alg-pref-textfield" id="column-count-input">
+                </div>
+            </div>
+            <div id="support-advanced-shortcuts-settings" hidden>
+                <div class="alg-pref-item">
+                    <div class="alg-pref-slide">
+                        <input type="checkbox" class="alg-pref-slide__input" id="hide-label">
+                        <label class="alg-pref-slide__label" for="hide-label"></label>
+                    </div>
+                    <label for="hide-label">Скрыть ярлыки</label>
+                </div>
+                <div class="alg-pref-item" id="shortcuts-listmode-container">
+                    <div class="alg-pref-slide">
+                        <input type="checkbox" class="alg-pref-slide__input" id="shortcuts-listmode">
+                        <label class="alg-pref-slide__label" for="shortcuts-listmode"></label>
+                    </div>
+                    <label for="shortcuts-listmode">Показывать сайты в списке</label>
+                </div>
+                <div id="iconsizes-group" hidden>
+                    <label>Размеры иконок:</label>
+                    <div class="alg-pref-iconsizes" id="iconsizes-container"></div>
+                </div>
+            </div>
+            <header id="toolbar-icons-header" hidden>
+                <h3 class="alg-pref-mainheader">Выбор значка в панели инструментов</h3>
+            </header>
+            <div id="toolbar-icons" hidden class="alg-pref-toolbaricons"></div>
+            <header>
+                <h3 class="alg-pref-mainheader">Управление настройками</h3>
+            </header>
+            <p>Настройки сохраняются автоматически и синхронизируются через внутреннюю синхронизацию, если включена внутренняя
+                синхронизация для расширений.</p>
+            <div class="alg-pref-buttonrow">
+                <button class="cj-md-button" id="btn-reset-settings">Сброс настроек</button>
+                <button class="cj-md-button" id="btn-import-settings">Импорт настроек</button>
+                <button class="cj-md-button" id="btn-export-settings">Экспорт настроек</button>
+            </div>
+            <div id="reset-settings-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <h3 class="alg-pref-popup__header">Сброс всех настроек</h3>
+                    <p class="alg-pref-popup__message">Вы уверены что вы хотите навсегда удалить все настройки??</p>
+                    <div class="alg-pref-popup__controls">
+                        <button class="cj-md-button cj-md-button--important close-popup-button" data-popup="reset-settings-popup">Отмена</button>
+                        <button id="reset-settings-popup__reset" class="cj-md-button cj-md-button--important close-popup-button" data-popup="reset-settings-popup">Сброс</button>
+                    </div>
+                </div>
+            </div>
+            <div id="import-settings-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <h3 class="alg-pref-popup__header">Импорт настроек</h3>
+                    <p class="alg-pref-popup__message">Внимание: импорт настроек изменить текущие настройки!</p>
+                    <div class="alg-pref-popup__controls">
+                        <button class="cj-md-button cj-md-button--important close-popup-button" data-popup="import-settings-popup">Отмена</button>
+                        <button id="import-settings-popup__import" class="cj-md-button cj-md-button--important close-popup-button" data-popup="import-settings-popup">Выберите файл</button>
+                    </div>
+                </div>
+            </div>
+            <div id="import-success-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <p class="alg-pref-popup__message">Настройки были импортированы.</p>
+                    <div class="alg-pref-popup__controls">
+                        <button id="import-success-popup__reload" class="cj-md-button cj-md-button--important close-popup-button" data-popup="import-success-popup">Перезагрузить опции старницы</button>
+                    </div>
+                </div>
+            </div>
+            <div id="import-fail-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <p class="alg-pref-popup__message">Не удалось импортировать ваши настройки. Убедитесь, что вы импортируете правильный файл конфигурации.</p>
+                    <div class="alg-pref-popup__controls">
+                        <button class="cj-md-button cj-md-button--important close-popup-button" data-popup="import-fail-popup">ok</button>
+                    </div>
+                </div>
+            </div>
+            <div id="remove-shortcut-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <h3 class="alg-pref-popup__header">Удалить ярлыки</h3>
+                    <p class="alg-pref-popup__message">Вы уверены что желаете удалить навсегда ярлыки?</p>
+                    <div class="alg-pref-popup__controls">
+                        <button class="close-popup-button cj-md-button--important cj-md-button" data-popup="remove-shortcut-popup">Отмена</button>
+                        <button id="remove-shortcut-popup__remove" class="cj-md-button cj-md-button--important close-popup-button" data-popup="remove-shortcut-popup">Удалить</button>
+                    </div>
+                </div>
+            </div>
+            <div id="custom-shortcut-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <h3 class="alg-pref-popup__header"></h3>
+                    <p>
+                        <label for="custom-shortcut-popup__name">Имя:</label>
+                        <input type="text" class="alg-pref-textfield" id="custom-shortcut-popup__name" placeholder="Например: Это гугл" size="40">
+                    </p>
+                    <p>
+                        <label for="custom-shortcut-popup__url">Ссылка:</label>
+                        <input type="text" class="alg-pref-textfield" id="custom-shortcut-popup__url" placeholder="https://google.com" size="40">
+                    </p>
+                    <p>
+                        <label for="custom-shortcut-popup__iconurl">Ссылка на иконку: (необязательно)</label>
+                        <input type="text" class="alg-pref-textfield" id="custom-shortcut-popup__iconurl" size="40">
+                    </p>
+                    <div class="alg-pref-popup__controls">
+                        <button class="cj-md-button cj-md-button--important close-popup-button" data-popup="custom-shortcut-popup">Отмена</button>
+                        <button id="custom-shortcut-popup__remove" class="cj-md-button cj-md-button--important close-popup-button" data-popup="custom-shortcut-popup">Удалить</button>
+                        <button id="custom-shortcut-popup__save" class="cj-md-button cj-md-button--important close-popup-button" data-popup="custom-shortcut-popup">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+            <div id="suggest-popup" class="alg-pref-popupwrapper">
+                <div class="alg-pref-popup">
+                    <div class="alg-pref-suggest">
+                        <iframe class="alg-pref-suggest__iframe"></iframe>
+                    </div>
+                    <div class="alg-pref-popup__controls">
+                        <button class="cj-md-button cj-md-button--important close-popup-button" data-popup="suggest-popup">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/bs.js"></script>
+    <script src="../js/cs.js"></script>
+    <script src="../js/opt.js"></script>
+</body>
+
+</html>
